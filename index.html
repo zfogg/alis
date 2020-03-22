@@ -3,13 +3,6 @@
   <head>
     
 
-<meta property="og:title" content="alis :. Arch Linux Install Script" />
-<meta property="og:description" content="alis  Arch Linux Install Script installs unattended, automated and customized Arch Linux system.   Installation       " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://picodotdev.github.io/alis/" />
-
-
-
 <meta name="description" content="Hardcoded description; the author should update :)" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,8 +15,8 @@
 <link rel="stylesheet" type="text/css" href="/alis/css/icons.css">
 
   </head>
-  <body>    
-    <a href="https://picodotdev.github.io/alis/" style="position: absolute; top: 0px; right: 0px; z-index: 99999;"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+  <body>
+    <a href="https://github.com/picodotdev/alis/" style="position: absolute; top: 0px; right: 0px; z-index: 99999;"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
 
     
 
@@ -32,7 +25,7 @@
 <nav class="navbar is-fresh is-transparent no-shadow" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item title" href="/">
+      <a class="navbar-item title" href="https://github.com/picodotdev/alis/">
         alis
       </a>
 
@@ -46,20 +39,23 @@
     <div id="navbar-menu" class="navbar-menu is-static">
 
       <div class="navbar-end">
-        <a href="/" class="navbar-item is-secondary">
+        <a href="#whaisit" class="navbar-item is-secondary">
           What is it?
         </a>
-        <a href="/" class="navbar-item is-secondary">
+        <a href="#principles" class="navbar-item is-secondary">
           Principles
         </a>
-        <a href="/" class="navbar-item is-secondary">
+        <a href="#features" class="navbar-item is-secondary">
           Features
         </a>
-        <a href="/" class="navbar-item is-secondary">
+        <a href="#installation" class="navbar-item is-secondary">
           Installation
         </a>
-        <a href="/" class="navbar-item is-secondary">
+        <a href="#video" class="navbar-item is-secondary">
           Video
+        </a>
+        <a href="https://github.com/picodotdev/alis/" class="navbar-item is-secondary">
+          GitHub
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
@@ -67,17 +63,14 @@
           </a>
 
           <div class="navbar-dropdown">
-            <a href="/" class="navbar-item">
-              Installation with asciinema vídeo
+            <a href="#installation-log" class="navbar-item">
+              Installation with log
             </a>
-            <a href="/" class="navbar-item">
+            <a href="#recovery" class="navbar-item">
               Recovery
             </a>
-            <a href="/" class="navbar-item">
+            <a href="#howyoucanhelp" class="navbar-item">
               How you can help
-            </a>
-            <a href="/" class="navbar-item">
-              Test in VirtuaBox with Packer
             </a>
           </div>
         </div>
@@ -91,7 +84,7 @@
 <nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item title" href="/">
+      <a class="navbar-item title" href="https://github.com/picodotdev/alis/">
         alis
       </a>
 
@@ -105,20 +98,23 @@
     <div id="cloned-navbar-menu" class="navbar-menu is-fixed">
 
       <div class="navbar-end">
-        <a href="/" class="navbar-item is-secondary">
+        <a href="#whaisit" class="navbar-item is-secondary">
           What is it?
         </a>
-        <a href="/" class="navbar-item is-secondary">
+        <a href="#principles" class="navbar-item is-secondary">
           Principles
         </a>
-        <a href="/" class="navbar-item is-secondary">
+        <a href="#features" class="navbar-item is-secondary">
           Features
         </a>
-        <a href="/" class="navbar-item is-secondary">
+        <a href="#installation" class="navbar-item is-secondary">
           Installation
         </a>
-        <a href="/" class="navbar-item is-secondary">
+        <a href="#video" class="navbar-item is-secondary">
           Video
+        </a>
+        <a href="https://github.com/picodotdev/alis/" class="navbar-item is-secondary">
+          GitHub
         </a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
@@ -126,17 +122,14 @@
           </a>
 
           <div class="navbar-dropdown">
-            <a href="/" class="navbar-item">
-              Installation with asciinema vídeo
+            <a href="#installation-log" class="navbar-item">
+              Installation with log
             </a>
-            <a href="/" class="navbar-item">
+            <a href="#recovery" class="navbar-item">
               Recovery
             </a>
-            <a href="/" class="navbar-item">
+            <a href="#howyoucanhelp" class="navbar-item">
               How you can help
-            </a>
-            <a href="/" class="navbar-item">
-              Test in VirtuaBox with Packer
             </a>
           </div>
         </div>
@@ -150,27 +143,126 @@
     <div class="hero-body">
   <div class="container">
     <div class="columns is-vcentered">
-      <div class="column is-5 is-offset-1 landing-caption">
-        <h1 class="title is-1 is-bold is-spaced">
+      <div class="column is-6 is-offset-3 landing-caption">
+        <h1 class="title is-1 is-bold is-spaced has-text-centered">
           alis
         </h1>
-        <h2 class="subtitle is-5 is-muted">
-          Arch Linux Install Script installs unattended, automated and customized Arch Linux system.
+        <h2 class="subtitle is-5 is-muted has-text-centered">
+          An easy and fast way to install <a href="https://www.archlinux.org/">Arch Linux</a>
+          <br><br>
+          Boot. Get. Configure. Install. Rest.
         </h2>
-        <p>
-          <a class="button cta rounded primary-btn raised" href="https://picodotdev.github.io/alis/">
-            Installation
+        <p class="has-text-centered">
+          <a class="button cta primary-btn raised" href="#installation">
+            How to install
+          </a>
+          <a class="button cta primary-btn raised" href="#video">
+            Video
           </a>
         </p>
-      </div>
-      <div class="column is-5 is-offset-1">
-        <figure class="image">
-          <img src="images/logos/archlinux.svg" alt="Arch Linux">
-        </figure>
       </div>
     </div>
   </div>
 </div>
+<div class="hero-body">
+  <div class="container">
+    <div class="columns is-vcentered">
+    <div class="column is-6 is-offset-3 has-text-centered">
+      <figure class="image">
+        <a href="https://www.archlinux.org/"><img src="images/logos/archlinux.svg" alt="Arch Linux"></a>
+      </figure>
+    </div>
+  </div>
+</div>
+<section id="whaisit" class="section is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">What is it?</h2>
+      <div class="divider is-centered"></div>
+    </div>
+    <div class="content-wrapper">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+</section>
+<section id="principles" class="section is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">Principles</h2>
+      <div class="divider is-centered"></div>
+    </div>
+    <div class="content-wrapper">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+</section>
+<section id="features" class="section is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">Features</h2>
+      <div class="divider is-centered"></div>
+    </div>
+    <div class="content-wrapper">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+</section>
+<section id="installation" class="section is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">Installation</h2>
+      <div class="divider is-centered"></div>
+    </div>
+    <div class="content-wrapper">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+</section>
+<section id="video" class="section is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">Video</h2>
+      <div class="divider is-centered"></div>
+    </div>
+    <div class="content-wrapper">
+       <script type="text/javascript" src="https://asciinema.org/a/192880.js" data-size="medium" data-cols="160" data-rows="40" id="asciicast-192880" async></script>
+    </div>
+  </div>
+</section>
+<section id="installation-log" class="section is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">Installation with log</h2>
+      <div class="divider is-centered"></div>
+    </div>
+    <div class="content-wrapper">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+</section>
+<section id="recovery" class="section is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">Recovery</h2>
+      <div class="divider is-centered"></div>
+    </div>
+    <div class="content-wrapper">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+</section>
+<section id="howyoucanhelp" class="section is-medium">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">How you can help</h2>
+      <div class="divider is-centered"></div>
+    </div>
+    <div class="content-wrapper">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+  </div>
+</section>
+
   </div>
 </section>
 
@@ -181,7 +273,7 @@
     <div class="columns">
       <div class="column">
         <div class="footer-logo">
-          <a class="navbar-item title" href="/">
+          <a class="navbar-item title" href="https://github.com/picodotdev/alis/">
             alis
           </a>
         </div>
@@ -193,22 +285,27 @@
             </div>
             <ul class="link-list">
               <li>
-                <a href="/">
+                <a href="#whaisit">
+                  What is it?
+                </a>
+              </li>
+              <li>
+                <a href="#principles">
                   Principles
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="#features">
                   Features
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="#installation">
                   Installation
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="#recovery">
                   Recovery
                 </a>
               </li>
