@@ -13,6 +13,8 @@
 <link href="https://fonts.googleapis.com/css?family=Open&#43;Sans:400,600" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/alis/css/style.min.d2b69a8839b7343e387b7737d53374517e6e14920cff89144408b78b4ba6526b.css" integrity="sha256-0raaiDm3ND44e3c31TN0UX5uFJIM/4kURAi3i0umUms=">
 <link rel="stylesheet" type="text/css" href="/alis/css/icons.css">
+<link rel="stylesheet" type="text/css" href="/alis/css/syntax.css">
+<link rel="stylesheet" type="text/css" href="/alis/css/main.css">
 
   </head>
   <body>
@@ -143,13 +145,13 @@
     <div class="hero-body">
   <div class="container">
     <div class="columns is-vcentered">
-      <div class="column is-6 is-offset-3 landing-caption">
-        <h1 class="title is-1 is-bold is-spaced has-text-centered">
-          alis
+      <div class="column is-10 is-offset-1 landing-caption">
+        <h1 class="title is-1 is-size-x5 is-bold is-spaced has-text-centered">
+          Arch Linux Install Script
         </h1>
-        <h2 class="subtitle is-5 is-muted has-text-centered">
-          An easy and fast way to install <a href="https://www.archlinux.org/">Arch Linux</a>
-          <br><br>
+        <h2 class="subtitle is-3 is-muted has-text-centered">
+          An easy and fast way to install Arch Linux.
+          <br>
           Boot. Get. Configure. Install. Rest.
         </h2>
         <p class="has-text-centered">
@@ -181,7 +183,18 @@
       <div class="divider is-centered"></div>
     </div>
     <div class="content-wrapper">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <p>
+        Arch Linux Install Script (or alis) installs unattended, automated and customized Arch Linux system.
+      </p>
+      <p>
+        It is a simple bash script that fully automates the installation of a Arch Linux system after booting from the original Arch Linux installation media. It contains the same commands that you would type and execute one by one interactively to complete the installation. The unique user intervention is to edit a configuration file to choose the installation options and preferences from partitioning, to encryption, bootloader, file system, language and keyboard mapping, desktop environment, kernels, packages to install and graphic drivers.
+      </p>
+      <p>
+        The automation makes the installation easy and fast. But if some time later after installation for any reason the system not boots correctly a recovery script is also provided to enter in a recovery mode that allow to downgrade packages or execute any other commands to restore the system. Also a log of the installation can be taken with <a href="https://asciinema.org/">asciinema</a>.
+      </p>
+      <p class="has-text-danger">
+        Warning! This script can delete all partitions of the persistent storage. It is recommended to test it first in a virtual machine like <a href="https://www.virtualbox.org/">VirtualBox</a>.
+      </p>
     </div>
   </div>
 </section>
@@ -192,7 +205,13 @@
       <div class="divider is-centered"></div>
     </div>
     <div class="content-wrapper">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <ul>
+        <li>Use the original Arch Linux installation media</li>
+        <li>Require as little interactivity as possible</li>
+        <li>Allow to customize the installation to cover the most common cases</li>
+        <li>Provide support for recovery</li>
+        <li>Provide support for log</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -203,7 +222,35 @@
       <div class="divider is-centered"></div>
     </div>
     <div class="content-wrapper">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <ul>
+        <li>System: GPT, UEFI, BIOS</li>
+        <li>Storage: SATA, NVMe and MMC</li>
+        <li>Encryption: root partition encrypted and no encrypted</li>
+        <li>Partition: no LVM, LVM, LVM on LUKS</li>
+        <li>File system: ext4, btrfs (with subvols), xfs</li>
+        <li>Optional file swap (not supported in btrfs)</li>
+        <li>Storage: SATA, NVMe and MMC</li>
+        <li>Kernels: linux-lts, linux-hardened, linux-zen</li>
+        <li>Desktop environment: GNOME, KDE, XFCE, Mate, Cinnamon, LXDE</li>
+        <li>Display managers: GDM, SDDM, Lightdm, lxdm</li>
+        <li>Graphics controller: intel, nvidia, amd with optionally early KMS start</li>
+        <li>Bootloader: GRUB, rEFInd, systemd-boot</li>
+        <li>WPA WIFI network installation</li>
+        <li>Periodic TRIM for SSD storage</li>
+        <li>Intel and AMD processors microcode</li>
+        <li>Optional file swap (not supported in btrfs)</li>
+        <li>VirtualBox guest utils</li>
+        <li>WPA WIFI network installation</li>
+        <li>Kernel compression and custom parameters</li>
+        <li>Users creation and add to sudoers</li>
+        <li>Common and custom packages installation</li>
+        <li>AUR utility installation (aurman, yay)</li>
+        <li>Script for download installation and recovery scripts and configuration files</li>
+        <li>Retry packages download on connection/mirror error</li>
+        <li>Packer support for testing in VirtualBox</li>
+        <li>Installation log with all commands executed and output in a file and/or asciinema video</li>
+        <li>Wait after installation for an abortable reboot</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -214,7 +261,23 @@
       <div class="divider is-centered"></div>
     </div>
     <div class="content-wrapper">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <p>
+        Download and boot from the latest <a href="https://www.archlinux.org/download/">original Arch Linux installation media</a>. After boot use the following comands to start the installation.
+      </p>
+      <p>
+        Follow the <a href="https://wiki.archlinux.org/index.php/Arch_Linux">Arch Way</a> of doing things and learn what this script does. This will allow you to know what is happening. 
+      </p>
+      <p>
+      Internet connection is required, with wireless WIFI connection see <a href="https://wiki.archlinux.org/index.php/Wireless_network_configuration#Wi-Fi_Protected_Access">Wireless_network_configuration</a> to bring up WIFI connection before start the installation.
+      </p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Load keymap</span>
+loadkeys <span class="o">[</span>keymap<span class="o">]</span>
+<span class="c1"># Download alis directly or with url shortener</span>
+curl https://raw.githubusercontent.com/picodotdev/alis/master/download.sh <span class="p">|</span> bash
+curl -sL https://bit.ly/2F3CATp <span class="p">|</span> bash
+<span class="c1"># Edit alis.conf and change variables values with your preferences</span>
+vim alis.conf
+./alis.sh</code></pre></div>
     </div>
   </div>
 </section>
@@ -236,7 +299,17 @@
       <div class="divider is-centered"></div>
     </div>
     <div class="content-wrapper">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Load keymap</span>
+loadkeys <span class="o">[</span>keymap<span class="o">]</span>
+<span class="c1"># Download alis directly or with url shortener</span>
+curl https://raw.githubusercontent.com/picodotdev/alis/master/download.sh <span class="p">|</span> bash
+curl -sL https://bit.ly/2F3CATp <span class="p">|</span> bash
+./alis-asciinema.sh
+<span class="c1"># Edit alis.conf and change variables values with your preferences</span>
+vim alis.conf
+./alis.sh
+<span class="nb">exit</span>
+./alis-reboot.sh</code></pre></div>
     </div>
   </div>
 </section>
@@ -247,7 +320,17 @@
       <div class="divider is-centered"></div>
     </div>
     <div class="content-wrapper">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <p>
+      Boot from the latest <a href="https://www.archlinux.org/download/">original Arch Linux installation media</a>. After boot use the following comands to start the recovery, this will allow you to enter in the arch-chroot environment.
+      </p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Load keymap</span>
+loadkeys <span class="o">[</span>keymap<span class="o">]</span>
+<span class="c1"># Download alis directly or with url shortener</span>
+curl https://raw.githubusercontent.com/picodotdev/alis/master/download.sh <span class="p">|</span> bash
+curl -sL https://bit.ly/2F3CATp <span class="p">|</span> bash
+<span class="c1"># Edit alis-recovery.conf and change variables values with your last installation with alis</span>
+vim alis-recovery.conf
+./alis-recovery.sh</code></pre></div>
     </div>
   </div>
 </section>
@@ -258,7 +341,12 @@
       <div class="divider is-centered"></div>
     </div>
     <div class="content-wrapper">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <ul>
+        <li>Test in VirtualBox and create an issue if something does not work, attach the main parts of the used configuration file and the error message</li>
+        <li><a href="https://github.com/picodotdev/alis/issues">Create issues</a> with new features</li>
+        <li>Send <a href="https://github.com/picodotdev/alis/pulls">pull requests</a></li>
+        <li>Share it in social networks, forums, create a blog post or video about it</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -329,6 +417,16 @@
     </div>
   </div>
 </footer>
+<div class="container">
+  <div class="columns">
+    <div class="column">
+      <p class="is-size-6 has-text-centered">
+        Built with Hugo and GitHub Pages. Theme based on hugo-fresh.<br>
+        Arch Linux Install Script is based on Arch Linux but is NOT approved, sponsored, or affiliated with Arch Linux or its related projects.
+      </p>
+    </div>
+  </div>
+</div>
 
 
       
