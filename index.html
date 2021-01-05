@@ -50,8 +50,8 @@
         <a href="#features" class="navbar-item is-secondary">
           Features
         </a>
-        <a href="#installation" class="navbar-item is-secondary">
-          Installation
+        <a href="#system-installation" class="navbar-item is-secondary">
+          System installation
         </a>
         <a href="#video" class="navbar-item is-secondary">
           Video
@@ -65,8 +65,8 @@
           </a>
 
           <div class="navbar-dropdown">
-            <a href="#installation-log" class="navbar-item">
-              Installation with log
+            <a href="#packages-installation" class="navbar-item">
+              Packages installation
             </a>
             <a href="#recovery" class="navbar-item">
               Recovery
@@ -109,8 +109,8 @@
         <a href="#features" class="navbar-item is-secondary">
           Features
         </a>
-        <a href="#installation" class="navbar-item is-secondary">
-          Installation
+        <a href="#system-installation" class="navbar-item is-secondary">
+          System installation
         </a>
         <a href="#video" class="navbar-item is-secondary">
           Video
@@ -124,8 +124,8 @@
           </a>
 
           <div class="navbar-dropdown">
-            <a href="#installation-log" class="navbar-item">
-              Installation with log
+            <a href="#packages-installation" class="navbar-item">
+              Packages installation
             </a>
             <a href="#recovery" class="navbar-item">
               Recovery
@@ -262,6 +262,7 @@
         <li>Flatpak utility installation and <b>Flatpak packages installation</b></li>
         <li>SDKMAN utility installation and <b>SDKMAN packages installation</b></li>
         <li><b>AUR utility</b> installation (yay, aurman) and <b>AUR packages installation</b></li>
+        <li><b>Packages installation after base system installation</b> (preferred way of packages installation)</li>
         <li>Script for download installation and <b>recovery scripts</b> and configuration files</li>
         <li><b>Retry packages download</b> on connection/mirror error</li>
         <li><b>Packer support</b> for testing in VirtualBox</li>
@@ -271,10 +272,10 @@
       </ul>
   </div>
 </section>
-<section id="installation" class="section is-medium">
+<section id="system-installation" class="section is-medium">
   <div class="container">
     <div class="title-wrapper has-text-centered">
-      <h2 class="title is-2">Installation</h2>
+      <h2 class="title is-2">System installation</h2>
       <div class="divider is-centered"></div>
     </div>
     <div class="content-wrapper">
@@ -287,15 +288,16 @@
       <p>
       Internet connection is required, with wireless WIFI connection see <a href="https://wiki.archlinux.org/index.php/Wireless_network_configuration#Wi-Fi_Protected_Access">Wireless_network_configuration</a> to bring up WIFI connection before start the installation.
       </p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Load keymap</span>
-loadkeys <span class="o">[</span>keymap<span class="o">]</span>
-<span class="c1"># Download alis directly or with url shortener</span>
-curl https://raw.githubusercontent.com/picodotdev/alis/master/download.sh <span class="p">|</span> bash
-curl -sL https://bit.ly/2F3CATp <span class="p">|</span> bash
-<span class="c1"># Edit alis.conf and change variables values with your preferences</span>
-vim alis.conf
-<span class="c1"># Start</span>
-./alis.sh</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#                         # Start the system with latest Arch Linux installation media</span>
+<span class="c1"># loadkeys [keymap]       # Load keyboard keymap, eg. loadkeys es, loadkeys us, loadkeys de</span>
+<span class="c1"># curl -sL https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash     # Download alis scripts</span>
+<span class="c1"># # curl -sL https://bit.ly/2F3CATp | bash                                                 # Alternative download URL with URL shortener</span>
+<span class="c1"># ./alis-asciinema.sh     # (Optional) Start asciinema video recording</span>
+<span class="c1"># vim alis.conf           # Edit configuration and change variables values with your preferences (system configuration)</span>
+<span class="c1"># vim alis-packages.conf  # (Optional) Edit configuration and change variables values with your preferences (packages to install)</span>
+<span class="c1">#                         # (The preferred way to install packages is after system installation, see Packages installation)</span>
+<span class="c1"># ./alis.sh               # Start installation</span>
+<span class="c1"># ./alis-reboot.sh        # (Optional) Reboot the system, only necessary when REBOOT=&#34;false&#34;</span></code></pre></div>
     </div>
   </div>
 </section>
@@ -310,26 +312,22 @@ vim alis.conf
     </div>
   </div>
 </section>
-<section id="installation-log" class="section is-medium">
+<section id="packages-installation" class="section is-medium">
   <div class="container">
     <div class="title-wrapper has-text-centered">
-      <h2 class="title is-2">Installation with log</h2>
+      <h2 class="title is-2">Packages installation</h2>
       <div class="divider is-centered"></div>
     </div>
     <div class="content-wrapper">
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Load keymap</span>
-loadkeys <span class="o">[</span>keymap<span class="o">]</span>
-<span class="c1"># Download alis directly or with url shortener</span>
-curl https://raw.githubusercontent.com/picodotdev/alis/master/download.sh <span class="p">|</span> bash
-curl -sL https://bit.ly/2F3CATp <span class="p">|</span> bash
-./alis-asciinema.sh
-<span class="c1"># Edit alis.conf and change variables values with your preferences</span>
-vim alis.conf
-<span class="c1"># Start</span>
-./alis.sh
-<span class="c1"># Exit</span>
-<span class="nb">exit</span>
-./alis-reboot.sh</code></pre></div>
+    <p>
+    After the base Arch Linux system is installed, alis can install packages with pacman, Flatpak, SDKMAN and from AUR.
+    </p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#                                  # After system installation start a user session</span>
+<span class="c1"># curl -sL https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash     # Download alis scripts</span>
+<span class="c1"># # curl -sL https://bit.ly/2F3CATp | bash                                                 # Alternative download URL with URL shortener</span>
+<span class="c1"># ./alis-packages-asciinema.sh     # (Optional) Start asciinema video recording</span>
+<span class="c1"># vim alis-packages.conf           # Edit configuration and change variables values with your preferences (packages to install)</span>
+<span class="c1"># ./alis-packages.sh               # Start packages installation</span></code></pre></div>
     </div>
   </div>
 </section>
@@ -343,15 +341,14 @@ vim alis.conf
       <p>
       Boot from the latest <a href="https://www.archlinux.org/download/">original Arch Linux installation media</a>. After boot use the following comands to start the recovery, this will allow you to enter in the arch-chroot environment.
       </p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Load keymap</span>
-loadkeys <span class="o">[</span>keymap<span class="o">]</span>
-<span class="c1"># Download alis directly or with url shortener</span>
-curl https://raw.githubusercontent.com/picodotdev/alis/master/download.sh <span class="p">|</span> bash
-curl -sL https://bit.ly/2F3CATp <span class="p">|</span> bash
-<span class="c1"># Edit alis-recovery.conf and change variables values with your last installation with alis</span>
-vim alis-recovery.conf
-<span class="c1"># Start</span>
-./alis-recovery.sh</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#                                  # Start the system with latest Arch Linux installation media</span>
+<span class="c1"># loadkeys [keymap]                # Load keyboard keymap, eg. loadkeys es, loadkeys us, loadkeys de</span>
+<span class="c1"># curl -sL https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash     # Download alis scripts</span>
+<span class="c1"># # curl -sL https://bit.ly/2F3CATp | bash                                                 # Alternative download URL with URL shortener</span>
+<span class="c1"># ./alis-recovery-asciinema.sh     # (Optional) Start asciinema video recording</span>
+<span class="c1"># vim alis-recovery.conf           # Edit configuration and change variables values with your last installation configuration with alis (mainly device and partition scheme)</span>
+<span class="c1"># ./alis-recovery.sh               # Start recovery</span>
+<span class="c1"># ./alis-recovery-reboot.sh        # Reboot the system</span></code></pre></div>
     </div>
   </div>
 </section>
@@ -411,8 +408,8 @@ vim alis-recovery.conf
                 </a>
               </li>
               <li>
-                <a href="#installation">
-                  Installation
+                <a href="#system-installation">
+                  System installation
                 </a>
               </li>
               <li>
