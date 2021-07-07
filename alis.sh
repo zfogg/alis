@@ -1039,6 +1039,7 @@ function users() {
     create_user "$USER_NAME" "$USER_PASSWORD"
 
     for U in ${ADDITIONAL_USERS[@]}; do
+	if [ $U = root ]; then continue; fi
         IFS='=' S=(${U})
         USER=${S[0]}
         PASSWORD=${S[1]}
