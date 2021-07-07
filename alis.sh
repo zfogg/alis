@@ -1141,6 +1141,7 @@ function create_user_homectl() {
 
 function create_user_useradd() {
     USER=$1
+    if [ "$USER" == "root" ]; then return 0; fi
     PASSWORD=$2
     arch-chroot /mnt useradd -m -G wheel,storage,optical -s /bin/bash $USER
     printf "$PASSWORD\n$PASSWORD" | arch-chroot /mnt passwd $USER
@@ -1499,6 +1500,7 @@ function custom_shell() {
         for U in ${ADDITIONAL_USERS[@]}; do
             IFS='=' S=(${U})
             USER=${S[0]}
+	    if [ "$USER" == "root" ]; then continue; fi
             custom_shell_user "$USER" $CUSTOM_SHELL_PATH
         done
     fi
@@ -1507,6 +1509,7 @@ function custom_shell() {
 
 function custom_shell_user() {
     USER=$1
+    if [ "$USER" == "root" ]; then exit 0; fi
     CUSTOM_SHELL_PATH=$2
 
     if [ "$SYSTEMD_HOMED" == "true" ]; then
