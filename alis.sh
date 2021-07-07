@@ -1039,9 +1039,9 @@ function users() {
     create_user "$USER_NAME" "$USER_PASSWORD"
 
     for U in ${ADDITIONAL_USERS[@]}; do
-	if [ $U = root ]; then continue; fi
         IFS='=' S=(${U})
         USER=${S[0]}
+	if [ "$USER" == "root" ]; then continue; fi
         PASSWORD=${S[1]}
         create_user "${USER}" "${PASSWORD}"
     done
@@ -1091,6 +1091,7 @@ EOT
 
 function create_user() {
     USER=$1
+    if [ "$USER" == "root" ]; then return 0; fi
     PASSWORD=$2
     if [ "$SYSTEMD_HOMED" == "true" ]; then
         arch-chroot /mnt systemctl enable systemd-homed.service
@@ -1103,6 +1104,7 @@ function create_user() {
 
 function create_user_homectl() {
     USER=$1
+    if [ "$USER" == "root" ]; then return 0; fi
     PASSWORD=$2
     STORAGE=""
     CIFS_DOMAIN=""
